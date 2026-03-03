@@ -1,0 +1,24 @@
+project: attention_gan_pretrained_demo
+seed: 42
+
+data:
+  train_dir: data/processed/train/normal
+  val_normal_dir: data/processed/val/normal
+  val_anomaly_dir: data/processed/val/anomaly
+  image_size: 128
+
+train:
+  batch_size: 4
+  epochs_warmup: 1
+  epochs_adv: 1
+  lr_g: 0.0002
+  lr_d: 0.0004
+  lambda_rec: 50.0
+  lambda_att: 0.1
+  save_dir: checkpoints
+  num_workers: 2
+
+infer:
+  save_vis_dir: vis
+  threshold_k: 2.5
+  window_size: 200
